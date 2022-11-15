@@ -15,7 +15,7 @@ const SIZES = {
     "--height": '12px'
   },
   large: {
-    "--border-radius": '4px',
+    "--border-radius": '8px',
     "--height": '24px',
     "--padding": '4px'
   }
@@ -51,7 +51,9 @@ const ProgressBarEl = styled.progress`
   padding: var(--padding);
   &::-webkit-progress-value{
     background-color: ${COLORS.primary};
-    border-radius: ${p => p.value > 99 && '4px'};
+    border-radius: 4px 0 0 4px;
+    border-top-right-radius: ${p => p.value > 99 && '4px'};
+    border-bottom-right-radius:${p => p.value > 99 && '4px'};
   }
   &::-webkit-progress-bar{
     background-color: ${COLORS.transparentGray15};
